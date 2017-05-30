@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>电影展示</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+</head>
+
+<body ng-app="moviecat">
+    <div class="top">
+        <div class="header" ng-controller="mainController">
+            <a href="#/home_page"><img src="assets/img/angular.jpg" alt=""></a>
+            <div class="search">
+                <form action="" ng-submit="search()">
+                    <input ng-model="query" class="my-input" type="text" placeholder="电影搜索">
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <!--li中添加 active 类样式，显示焦点状态。-->
+                <li auto-class="active"><a href="#/home_page">首页</a></li>
+                <li auto-class="active"><a href="#/in_theaters">正在热映</a></li>
+                <li auto-class="active"><a href="#/coming_soon">即将上映</a></li>
+                <li auto-class="active"><a href="#/top250">Top250</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+
+        <!-- 路由填充处-->
+        <ng-view></ng-view>
+    <!--电影列表开始-->
+
+        <!--电影列表结束-->
+
+
+        <!--其他-->
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>版权所有&copy; angular交流学习 (允许侵权)</p>
+            <p>email:dnwu66@126.com</p>
+        </div>
+    </footer>
+    <!-- 百各庄 -->
+    <script src="assets/js/prefixfree.min.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src='../component/myservice.js'></script>
+    <script src="../homepage/home.js"></script>
+    <script src="../subject/subject.js"></script>
+    <script src='../moveList/moveList.js'></script>
+    <script src="../component/atuoActive.js"></script>
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
